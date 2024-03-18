@@ -14,13 +14,13 @@ const transporter = nodemailer.createTransport({
 });
 
 //Gmail connection verification
-transporter.verify(function (error, success) {
-  if (error) {
-    logger.info(error);
-  } else {
-    logger.info("Server is ready to take our messages");
-  }
-});
+// transporter.verify(function (error, success) {
+//   if (error) {
+//     logger.info(error);
+//   } else {
+//     logger.info("Server is ready to take our messages");
+//   }
+// });
 
 const mailOptions = {
   from: "Ecommerce - " + config.gmailAccount,

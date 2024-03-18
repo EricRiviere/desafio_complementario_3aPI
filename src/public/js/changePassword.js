@@ -6,7 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const formData = new FormData(changePasswordForm);
     const password = formData.get("password");
+    const confirmPassword = formData.get("confirm-password");
     const token = window.location.search.split("=")[1];
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match. Please make sure your passwords match.");
+      return;
+    }
 
     try {
       const response = await fetch("/api/users/updatepassword/", {
