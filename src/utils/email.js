@@ -69,7 +69,7 @@ export const sendEmailWithTicket = async (email, ticket) => {
     await transporter.sendMail(mailOptions);
     logger.info("Order confirmation email sent to: " + email);
   } catch (error) {
-    logger.warn("Error sending email:", error);
+    logger.warning("Error sending email:", error);
     throw new Error("Error sending email: " + error.message);
   }
 };
@@ -94,7 +94,7 @@ export const sendResetPasswordEmail = async (email, token) => {
     await transporter.sendMail(mailOptions);
     logger.info("Reset password email sent to: " + email);
   } catch (error) {
-    logger.warn("Error sending email:", error);
+    logger.warning("Error sending email:", error);
     throw new Error("Error sending email: " + error.message);
   }
 };

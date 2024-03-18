@@ -49,6 +49,7 @@ export const resetPasswordEmailController = async (req, res) => {
     const token = generateTokenResetPassword(user);
 
     await sendResetPasswordEmail(email, token);
+    res.json("Reset password email sended");
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
